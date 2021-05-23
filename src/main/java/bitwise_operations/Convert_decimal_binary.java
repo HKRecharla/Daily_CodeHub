@@ -7,11 +7,8 @@ public class Convert_decimal_binary {
         int n=4;
 
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println(Math.pow(2,(i)));
-        }
-
-       //sol(n);
+        System.out.println(Math.sqrt(10));
+        sol(n);
     }
 
 
