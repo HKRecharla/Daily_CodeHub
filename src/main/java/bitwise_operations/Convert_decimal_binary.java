@@ -8,7 +8,7 @@ public class Convert_decimal_binary {
 
 
         System.out.println(Math.sqrt(10));
-        sol(n);
+        solve5(n);
     }
 
 
@@ -84,13 +84,13 @@ public class Convert_decimal_binary {
         A=A+1;//as we would require 0 to A to get the results instead of 1 to A
         for(int i=0;i<=31;i++){
 
-            int a = (int )Math.pow(2,i+1);
-            int b =(int )Math.pow(2,i);
-            int power =1000000007;
-            count = (count%power
-                    +(A/a*b)
-                    +Math.max((A%a)-b,0)%power)%power;
-
+//            int a = (int )Math.pow(2,i+1);
+//            int b =(int )Math.pow(2,i);
+//            int power =1000000007;
+//            count = (count%power
+//                    +(A/a*b)
+//                    +Math.max((A%a)-b,0)%power)%power;
+//
 
 
             count=(count%1000000007

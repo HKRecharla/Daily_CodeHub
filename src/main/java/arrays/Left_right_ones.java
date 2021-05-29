@@ -6,11 +6,11 @@ public class Left_right_ones {
     public static void main(String[] args) {
 
 
-        String A ="100001011";
+        String A ="001101111000110100";
 
 
         //System.out.println(Math.sqrt(256));
-        solve(A);
+        solve2(A);
     }
 
 
