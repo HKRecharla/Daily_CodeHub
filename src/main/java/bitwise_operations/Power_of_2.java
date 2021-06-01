@@ -4,10 +4,8 @@ public class Power_of_2 {
 
     public static void main(String[] args) {
 
-    int n=132;
 
-        boolean b = solve2(n);
-        System.out.println(Math.pow(7,996));
+        System.out.println(Math.floor(Math.sqrt(10)));
     }
 
     public static boolean solve2(int  n){

@@ -8,8 +8,8 @@ public class Minimum_difference {
     public static void main(String[] args) {
 
 
-        int[] A={1,1,2,2};
-        int B=1;
+        int[] A={2, 6, 3, 9, 8};
+        int B=3;
 
         minimum_diff(A,B);
 
@@ -32,22 +32,30 @@ public class Minimum_difference {
                 map.put(A[i],1);
             }
         }
-        for (int i = 0; i < B; i++) {
-            int val = 0;
-            if(map.get(min)>map.get(max)){
-                min = min+1;
-                if(map.containsKey(min)){
-                    map.put(min,map.get(min)+1);
-                }else {
-                    map.put(min,1);
+        while(min<max && B!=0){
+            if(map.get(min) < map.get(max)){
+                if(B<map.get(min)){
+                    break;
                 }
+                if(map.containsKey(min+1)){
+                    map.put(min+1,map.get(min+1)+map.get(min));
+                }else{
+                    map.put(min+1,map.get(min));
+
+                }
+                B=B-map.get(min);
+                min++;
             }else{
-                max = max-1;
-                if(map.containsKey(max)){
-                    map.put(max,map.get(max)+1);
-                }else {
-                    map.put(max,1);
+                if(B<map.get(max)){
+                    break;
                 }
+                if(map.containsKey(max-1)){
+                    map.put(max-1, map.get(max-1) + map.get(max));
+                }else {
+                    map.put(max-1,map.get(max));
+                }
+                B=B-map.get(max);
+                max--;
             }
         }
 

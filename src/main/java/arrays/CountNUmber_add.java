@@ -7,9 +7,9 @@ public class CountNUmber_add {
 
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(9);
-        arrayList.add(9);
-        arrayList.add(9);
+        arrayList.add(0);
+        arrayList.add(0);
+        arrayList.add(0);
 
 
         ArrayList<Integer> g = plusOne(arrayList);

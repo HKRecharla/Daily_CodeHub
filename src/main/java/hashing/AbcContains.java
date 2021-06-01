@@ -9,8 +9,8 @@ public class AbcContains {
 
 
     public static void main(String[] args) {
-        String a ="docp";
-        String b="aoapedopco";
+        String a ="abc";
+        String b="abcbacabc";
 
         //abc -
         //bcb
