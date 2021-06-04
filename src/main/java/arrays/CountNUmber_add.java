@@ -10,11 +10,11 @@ public class CountNUmber_add {
         arrayList.add(0);
         arrayList.add(0);
         arrayList.add(0);
-
-
+        arrayList.add(0);
+        arrayList.add(0);
         ArrayList<Integer> g = plusOne(arrayList);
         for (int i = 0; i < g.size(); i++) {
-            System.out.println(g.get(i));
+            System.out.print(g.get(i)+" ");
         }
 
     }
