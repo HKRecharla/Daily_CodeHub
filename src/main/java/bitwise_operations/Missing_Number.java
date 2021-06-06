@@ -4,15 +4,15 @@ public class Missing_Number {
 
     public static void main(String[] args) {
 
-        int[] A= {1,1,2,2,3,4,4};
-        duplicate(A);
+        int[] A= {1,4,2,8,6,7,3};
+        missing(A);
     }
 
 
     public static void missing(int[] A){
         int ans =0;
         for (int i = 0; i < A.length-1; i++) {
-            ans = ans^A[i]^(i+1);
+            ans = ans^A[i]^A[i+1];
         }
         System.out.println(ans^A.length);
     }

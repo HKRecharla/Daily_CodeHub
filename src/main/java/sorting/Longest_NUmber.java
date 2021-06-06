@@ -11,6 +11,10 @@ public class Longest_NUmber {
 
     }
 
+    /**
+     *
+     * @param A
+     */
 
 
     public static void longest_series(int[] A){
@@ -18,13 +22,16 @@ public class Longest_NUmber {
         Node node[] = new Node[A.length];
 
         int i=0;
+        //added A elements to each NODE
         for (int n:A) {
             node[i] = new Node(n);
             i++;
         }
 
-        Arrays.sort(node);
+        //sorted
+        Arrays.sort(node);  // node complete linkd list
 
+        // sorted complete node -- check each node
         for (Node num: node) {
             if(num.number ==0 && sb.length()!=0){
                 continue;
@@ -37,20 +44,16 @@ public class Longest_NUmber {
     }
 
     public static class Node implements Comparable<Node>{
-
         int number;
         public Node(int number){
             this.number =number;
         }
 
-
-
         @Override
-        public int compareTo(Node theres) {
-
-            String first = String.valueOf(this.number)+String.valueOf(theres.number);
-            String second = String.valueOf(theres.number)+String.valueOf(this.number);
-            return second.compareTo(first);
+        public int compareTo(Node link) {
+            String a = String.valueOf(this.number)+String.valueOf(link.number);
+            String b = String.valueOf(link.number)+String.valueOf(this.number);
+            return a.compareTo(b);
         }
     }
 
@@ -173,6 +176,8 @@ public class Longest_NUmber {
                 }else if(A[end]<0){
                     end++;
                 }else{
+                    //A = L+R
+                    //B =R+L
                         String a= String.valueOf(A[start])+""+String.valueOf(A[end]);
                         String b= String.valueOf(A[end])+""+String.valueOf(A[start]);
                         if(Integer.parseInt(a)>Integer.parseInt(b)){
