@@ -7,34 +7,38 @@ public class Sorted_permutation {
     public static void main(String[] args) {
 
         String A = "acb";
-        permu(A);
+        int s = rank(A);
+
+        System.out.println(s);
+       // permu(A);
     }
 
 
-    public static void permu(String A){
-
-        int len = A.length();
-        int[] a = new int[len];
-
-        for (int i = 0; i < a.length; i++) {
-           a[i] = A.charAt(i)-'a'+1;
+    public static int rank(String a){
+        if(a.length()==1){
+            return 1;
         }
+        int count = position(a);
+        int mod = count*fact(a.length()-1)%1000003;
+       return  (mod+rank(a.substring(1)))%1000003;
+    }
+
+    public static int position(String a){
         int count =0;
-        int n=len;
-        Arrays.sort(a);
-        for (int i = 0; i < a.length-1; i++) {
-            if(a[i] ==i+1){
+        for (int i = 1; i < a.length(); i++) {
+            if(a.charAt(i) < a.charAt(0)){
+                count++;
             }
         }
-        System.out.println(count);
+        return count;
     }
-
 
     public static int fact(int a){
         if(a<=0){
             return 1;
         }
-        return a*fact(a-1);
+        return a*fact(a-1)%1000003;
     }
+
 
 }

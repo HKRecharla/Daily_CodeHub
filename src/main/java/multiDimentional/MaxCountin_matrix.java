@@ -7,16 +7,18 @@ public class MaxCountin_matrix {
 
     public static void main(String[] args) {
 
-        int [][] F ={
-                {0, 0, 0, 0, 0, 1, 1, 1, 1},
-                {0, 0, 0, 0, 0, 1, 1, 1, 1},
-                {0, 0, 0, 0, 0, 1, 1, 1, 1},
-                {0, 0, 0, 0, 0, 0, 1, 1, 1},
-                {0, 0, 0, 0, 0, 0, 1, 1, 1},
-                {0, 0, 0, 1, 1, 1, 1, 1, 1},
-                {0, 0, 0, 0, 1, 1, 1, 1, 1},
-                {0, 0, 0, 1, 1, 1, 1, 1, 1},
-                {0, 0, 0, 1, 1, 1, 1, 1, 1}};
+        int [][] F ={{0,1,1},
+                {0,0,1},
+                {0,1,1}};
+//                {0, 0, 0, 0, 0, 1, 1, 1, 1},
+//                {0, 0, 0, 0, 0, 1, 1, 1, 1},
+//                {0, 0, 0, 0, 0, 1, 1, 1, 1},
+//                {0, 0, 0, 0, 0, 0, 1, 1, 1},
+//                {0, 0, 0, 0, 0, 0, 1, 1, 1},
+//                {0, 0, 0, 1, 1, 1, 1, 1, 1},
+//                {0, 0, 0, 0, 1, 1, 1, 1, 1},
+//                {0, 0, 0, 1, 1, 1, 1, 1, 1},
+//                {0, 0, 0, 1, 1, 1, 1, 1, 1}};
 
         ArrayList<ArrayList<Integer>> A = new ArrayList<>();
         for (int i = 0; i < F.length; i++) {
@@ -72,7 +74,8 @@ public class MaxCountin_matrix {
         System.out.println("row length : "+A.size());
         System.out.println("col length : "+A.get(0).size());
 
-        count_down_wise(A,A.get(0).size());
+        int res = count_down_wise(A,A.get(0).size());
+        System.out.println(res);
         //count_row_wise(A,A.size(),B.size());
     }
 
@@ -119,44 +122,34 @@ public class MaxCountin_matrix {
     }
     public static int count_down_wise(ArrayList<ArrayList<Integer>> A,int col){
 
-
         int c=0;
         int r=0;
-        int rowno=0;
+        int res=0;
         for (int i = 0; i < col; i++) {
             if(A.get(0).get(i) ==1){
                 c = i;
-                rowno=0;
+                res=0;
                 break;
             }else{
-                c=i;
+                c=i; //2
             }
         }
         r++;
-
         int count =c;
-
-        while (true){
+        while (c>0){
             if(A.get(r).get(c)==1){
                 if(c<count){
-                    rowno =r;
+                    res =r;
                 }
                 c--;
-                if(c<0){
-                    break;
-                }
             }else {
                 r++;
-                //System.out.println(r);
                 if(r>=col){
                     break;
                 }
             }
-
         }
-
-       // System.out.println(rowno);
-        return rowno;
+        return res;
     }
 
 
