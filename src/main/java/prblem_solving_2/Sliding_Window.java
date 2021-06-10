@@ -1,24 +1,67 @@
 package prblem_solving_2;
 
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Stack;
 
 public class Sliding_Window {
 
     public static void main(String[] args) {
 
-        int[] a={10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+        int[] a={648, 614, 490, 138, 657, 544, 745, 582, 738, 229, 775, 665, 876, 448, 4, 81, 807, 578, 712, 951, 867, 328, 308, 440, 542, 178, 637, 446, 882, 760, 354, 523, 935, 277, 158, 698, 536, 165, 892, 327, 574, 516, 36, 705, 900, 482, 558, 937, 207, 368};
+                //{10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
                 //{648, 614, 490, 138, 657, 544, 745, 582, 738, 229, 775, 665, 876, 448, 4, 81, 807, 578, 712, 951, 867, 328, 308, 440, 542, 178, 637, 446, 882, 760, 354, 523, 935, 277, 158, 698, 536, 165, 892, 327, 574, 516, 36, 705, 900, 482, 558, 937, 207, 368};
                 //{10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < a.length; i++) {
             list.add(a[i]);
         }
-        int B=2;
-        slide_3(list,B);
+        int B=9;
+        slide_6(list,B);
+
+    }
+
+    
+    public static void slide_6(ArrayList<Integer> A, int B){
+        Deque<Integer> queue = new LinkedList<>();
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+
+        for (int i = 0; i < A.size(); i++) {
+
+            if(queue.peekFirst()!=null && queue.peekFirst()<=(i-B)){
+                queue.removeFirst();
+            }
+
+            while (queue.peekFirst()!=null && A.get(queue.peekFirst())<A.get(i)){
+                queue.removeLast();
+            }
+            queue.addLast(i);
+            if(i>=(B-1)){
+                list.add(A.get(queue.peekFirst()));
+            }
+
+        }
+
+        System.out.println(list);
+
+    }
+    
+    
+
+    public static void slide_4( ArrayList<Integer> A, int B){
+        int len = A.size();
+        int N=B;
+        ArrayList<Integer> list= new ArrayList<>();
+        for (int i = 0; i < len-B+1; i++) {
+            int max=Integer.MIN_VALUE;
+            for (int j = i; j <N ; j++) {
+                max = Math.max(A.get(j),max);
+            }
+            list.add(max);
+            N++;
+        }
+
 
     }
 
@@ -151,4 +194,40 @@ public class Sliding_Window {
         }
         System.out.println(list);
     }
+
+
+    public static void slid(int[] A, int B){
+        Node node[] = new Node[A.length];
+        int i=0;
+        for(int n:A){
+            node[i]= new Node(n);
+            i++;
+        }
+
+        int N=B;
+        for (int j = 0; j < A.length-B; j++) {
+
+            N++;
+        }
+
+
+
+
+    }
+
+    public static class Node implements Comparable<Node>{
+        int num;
+        public Node(int num){
+            this.num=num;
+        }
+        @Override
+        public int compareTo(Node o) {
+            String a = String.valueOf(this.num);
+            String b = String.valueOf(o.num);
+            return a.compareTo(b);
+        }
+    }
+
+
+
 }
