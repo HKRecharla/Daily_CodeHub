@@ -1,6 +1,6 @@
 package problem_solving_6;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -58,8 +58,31 @@ public class Duplicates_binary {
                 {0,0,1,0,1,0,1,0,0,1,1,0,1,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,0,0},
         };
 
+        ArrayList<ArrayList<Integer>> a = new ArrayList<>();
+        for (int i = 0; i <A.length ; i++) {
+            ArrayList<Integer> an = new ArrayList<>();
+            for (int j = 0; j < A[0].length; j++) {
+                an.add(A[i][j]);
+            }
+            a.add(an);
+        }
 
-        solve_1(A);
+        solve_2(a);
+    }
+    
+    
+    public static void solve_2(ArrayList<ArrayList<Integer>> A){
+        HashMap<ArrayList<Integer>, Integer> map= new HashMap<>();
+        ArrayList<Integer> ans= new ArrayList<>();
+
+        for (int i = 0; i < A.size(); i++) {
+            if(map.containsKey(A.get(i))){
+                ans.add(i+1);
+            }else{
+                map.put(A.get(i),map.getOrDefault(A.get(i),0)+1);
+            }
+        }
+        System.out.println(ans);
     }
 
     public static void solve_1(int[][] A) {
