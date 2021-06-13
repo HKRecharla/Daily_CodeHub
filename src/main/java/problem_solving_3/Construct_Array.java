@@ -129,7 +129,7 @@ public class Construct_Array {
                     ap[j]=k;
                 }
             }
-            Arrays.sort(ap);
+           // Arrays.sort(ap);
 
             for (int j = 0; j < ap.length; j++) {
                 System.out.print(ap[i]+" ");
