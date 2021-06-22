@@ -6,7 +6,6 @@ public class ReverseString {
         char[] c={'h','e','l','l','o'};
 
         String s ="";
-        s.replaceAll()
         int l=0;
         int r=c.length-1;
         while(l<r){
