@@ -21,6 +21,7 @@ public class Test {
                 l++;
             }else{
                 r--;
+                System.out.println();
             }
         }
         return res;
