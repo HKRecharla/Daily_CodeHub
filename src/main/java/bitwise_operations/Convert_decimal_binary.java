@@ -7,10 +7,31 @@ public class Convert_decimal_binary {
         int n=4;
 
 
-        System.out.println(Math.sqrt(10));
-        solve5(n);
+//        System.out.println(Math.sqrt(10));
+//        solve5(n);
+
+        long a =3;
+
+
+
+
+
     }
 
+
+    public static void count_no_one_bits(){
+        long a =4294967295l;
+        int rem=0;
+        int count =0;
+        while(a>0){
+            rem = (int)a%2;
+            a=a/2;
+            System.out.print(rem +" ");
+            if(Math.abs(rem)==1){
+                count++;
+            }
+        }
+    }
 
     public static int solve(int A){
 
@@ -105,6 +126,7 @@ public class Convert_decimal_binary {
     }
 
 
+    //Decimal to Binary
     public static int convert(int decimal){
         int[] binary =  new int[40];
         int count=0;
@@ -119,6 +141,23 @@ public class Convert_decimal_binary {
            f = f+ binary[i];
         }
         return f;
+    }
+
+
+    public static void binary_to_decimal(long a){
+        long binary=0;
+
+        int p=0;
+        while (true){
+            if(a==0){
+                break;
+            }else {
+                int temp = (int)a%10;
+                binary+=temp*Math.pow(2,p);
+                binary = binary/10;
+                p++;
+            }
+        }
     }
 
     public static int[] convert1(int decimal){

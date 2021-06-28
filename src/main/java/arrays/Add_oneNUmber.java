@@ -6,7 +6,7 @@ public class Add_oneNUmber {
     public static void main(String[] args) {
 
         int[] A={0,9,9,9};
-        add(A);
+        //add(A);
     }
 
     public static void add(ArrayList<Integer> A){
