@@ -45,8 +45,7 @@ public class Trailing_Zeros {
 
 
     public static void main(String[] args) {
-        HashMap<Integer,Integer> map = new HashMap<>();
-        System.out.println(map.containsKey(12));
+        System.out.println(1^2);
     }
 
     public int solve(int A) {

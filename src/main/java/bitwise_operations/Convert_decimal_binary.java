@@ -8,7 +8,7 @@ public class Convert_decimal_binary {
 
 
 //        System.out.println(Math.sqrt(10));
-//        solve5(n);
+       solve5(n);
 
         long a =3;
 
