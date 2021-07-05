@@ -8,6 +8,7 @@ public class Bulbs {
         int[] A={ 1,0, 1, 0,0, 1};
        int a = bulbs1(A);
         System.out.println(a);
+        int max = Integer.MIN_VALUE;
     }
 
 
