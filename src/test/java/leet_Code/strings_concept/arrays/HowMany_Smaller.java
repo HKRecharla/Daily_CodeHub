@@ -5,11 +5,11 @@ public class HowMany_Smaller {
 
     public static void main(String[] args) {
         int indices[] ={8,1,2,2,3};
-
+        int nums[] ={8,1,2,2,3};
         String s ="";
         for(int i=0;i<indices.length;i++){
             s.charAt(indices[i]);
-            String res = String.valueOf(s.charAt[indices[i]]);
+            String res = String.valueOf(s.charAt(indices[i]));
         }
 
 
