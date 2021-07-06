@@ -4,7 +4,7 @@ public class Factorial {
 
 
     public static void main(String[] args) {
-        int N=4;
+        int N=6;
         int f  = fact(N);
         System.out.println(f);
     }
