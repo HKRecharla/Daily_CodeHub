@@ -6,7 +6,8 @@ public class Fibonic_series {
 
 
     public static void main(String[] args) {
-    
+
+
         int A=1000000000%1000000007;
         int MOD =1000000007;
         ArrayList<Integer> arr = new ArrayList<>(A+2);
