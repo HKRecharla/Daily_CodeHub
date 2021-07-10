@@ -2,7 +2,7 @@ package mathsII;
 
 public class PubG {
     public static void main(String[] args) {
-        int[] A = {20,12,10,14,28};
+        int[] A = {8,20,30,11};
         pubg(A);
 
     }
@@ -13,6 +13,7 @@ public class PubG {
         int ans = A[0];
         for (int i = 0; i <A.length-1 ; i++) {
             ans=GCD(ans,A[i+1]);
+            System.out.println(ans);
         }
 
         System.out.println(ans);

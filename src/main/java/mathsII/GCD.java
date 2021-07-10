@@ -3,8 +3,8 @@ package mathsII;
 public class GCD {
 
     public static void main(String[] args) {
-        int a=6;
-        int b=720;
+        int a=-5;
+        int b=1;
         int ans = gcd_mod(Math.abs(a),Math.abs(b));
         System.out.println(ans);
     }
