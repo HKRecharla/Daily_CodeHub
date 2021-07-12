@@ -12,8 +12,9 @@ public class Primal_Power {
 //                52, 23, 3, 37, 53, 89, 9, 41, 19, 61, 7, 5, 53, 59, 19, 11, 79, 37, 31, 37,
 //                73, 82, 41, 2, 13, 8, 2, 36, 19, 58, 17, 17, 59, 59, 37, 11, 13, 37, 47, 83, 31, 3};
 
-        primal(A);
+        //primal(A);
 
+        primes(1000);
 
     }
 
@@ -35,6 +36,36 @@ public class Primal_Power {
         System.out.println(count);
     }
 
+
+    public static void primes(int A){
+       Boolean[] a = new Boolean[A];
+
+        for (int i = 0; i < A; i++) {
+            a[i]=true;
+        }
+
+        for (int i = 2; i < 6; i++) {
+            int mul=2;
+            int val =mul*2;
+            for (int j = val; j <A; j=i*mul) {
+                if(j<=A){
+                    a[j]=false;
+                    mul++;
+                }else{
+                    break;
+                }
+
+            }
+        }
+
+        for (int i = 0; i < A; i++) {
+            if (a[i]==true){
+                System.out.println(i);
+            }
+        }
+
+
+    }
 
     public static boolean prime(int n){
         boolean flag = true;
