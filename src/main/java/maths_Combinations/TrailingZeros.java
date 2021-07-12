@@ -12,14 +12,10 @@ public class TrailingZeros {
         String s  = String.valueOf(fac);
         int count=0;
 
-
-        for (int i = 5; A / i >= 1; i *= 5){
-            System.out.println("i => "+i);
-            System.out.println("A/i => "+A / i);
-            count += A / i;
-            System.out.println("count => "+count);
+        for (int i = 5; A/i >=1 ; i*=5) {
+            count+=A/i;
         }
-
+        System.out.println(count);
 
 
 //        for (int i = s.length()-1; i>=0 ; i--) {

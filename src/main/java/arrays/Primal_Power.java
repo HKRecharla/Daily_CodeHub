@@ -14,7 +14,7 @@ public class Primal_Power {
 
         //primal(A);
 
-        primes(1000);
+        primes_r(30);
 
     }
 
@@ -37,6 +37,30 @@ public class Primal_Power {
     }
 
 
+    public static void primes_r(int A){
+        Boolean[] a = new Boolean[A];
+
+        for (int i = 0; i < A; i++) {
+            a[i]=true;
+        }
+
+        for (int i = 2; i < 6; i++) {
+            if(a[i]==true){
+                for (int j = i; j*i <A ; j++) {
+                    a[i*j]=false;
+                }
+            }
+        }
+
+        for (int i = 2; i < A; i++) {
+            if (a[i]==true){
+                System.out.println(i);
+            }
+        }
+
+
+    }
+
     public static void primes(int A){
        Boolean[] a = new Boolean[A];
 
@@ -58,7 +82,7 @@ public class Primal_Power {
             }
         }
 
-        for (int i = 0; i < A; i++) {
+        for (int i = 2; i < A; i++) {
             if (a[i]==true){
                 System.out.println(i);
             }
