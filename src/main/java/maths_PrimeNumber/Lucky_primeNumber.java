@@ -6,7 +6,7 @@ public class Lucky_primeNumber {
 
     public static void main(String[] args) {
 
-         o_logn(77);
+         o_logn(10);
 
     }
 
@@ -21,7 +21,7 @@ public class Lucky_primeNumber {
         for (int i = 2; i <=A; i++) {
             boolean flag = isPrime(i);
             if(flag){
-                for (int j = 2*i; j <=A ; j+=i) {
+                for (int j = 2*i; j <=A ; j=j+i) {
                     c[j]+=1;
                 }
             }
