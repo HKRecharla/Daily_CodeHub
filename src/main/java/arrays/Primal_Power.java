@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.ArrayList;
+
 public class Primal_Power {
 
     public static void main(String[] args) {
@@ -68,18 +70,21 @@ public class Primal_Power {
             a[i]=true;
         }
 
-        for (int i = 2; i < 6; i++) {
+        for (int i = 2; i < A; i++) {
             int mul=2;
             int val =mul*2;
+            ArrayList<Integer> list = new ArrayList<>();
             for (int j = val; j <A; j=i*mul) {
                 if(j<=A){
                     a[j]=false;
                     mul++;
+                    list.add(i);
                 }else{
                     break;
                 }
 
             }
+            System.out.println(list);
         }
 
         for (int i = 2; i < A; i++) {
