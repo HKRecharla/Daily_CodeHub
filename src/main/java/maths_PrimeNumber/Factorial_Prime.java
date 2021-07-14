@@ -8,8 +8,9 @@ import java.util.Map;
 public class Factorial_Prime {
 
     public static void main(String[] args) {
-        int[] A={2,3,4,5,6};
-        pre(A);
+        int[] A={2,2,2,2,2};
+                //{125, 798, 631, 637, 572, 348, 234, 945, 504, 457, 255, 790, 586, 758, 173, 192, 706, 503, 419, 893, 140, 561, 492, 647, 979, 321, 751, 336, 23, 299, 65, 500, 449, 697, 137, 22, 397, 723, 967, 253, 533, 222, 396, 119, 980, 569, 311, 38, 424, 731, 932, 565, 644, 424, 564, 623, 745, 315, 311, 120, 615, 377, 621, 416, 426, 110, 438, 823, 834, 405, 429, 367, 979, 825, 486, 959, 746, 149, 350, 171, 232, 282, 88, 876, 706, 4, 852, 804, 671, 163, 924, 286, 892, 897, 55, 318, 8, 493, 494, 194 };
+        fact_array(A);
     }
 
     public static int power(int a, int b,int MOD){
@@ -21,9 +22,68 @@ public class Factorial_Prime {
     }
 
 
+    public static void fact_array(int[] A){
+        int MOD =1000000007;
+        Arrays.sort(A);
+        int max = A[A.length-1];
+        long ans=0;
+        ArrayList<Integer> list = seive_prime(max);//2 3 5 7
+        Map<Integer,Integer> primeMap = new HashMap<>();
+        int count =0;
+        int lastprime=0;
+
+        int v=0;
+        for (int i = 0; i < A.length; i++) {
+            if(A[i]<2) continue;
+
+            if(b[A[i]]){
+                if(A[i]>list.get(list.size()-1)){
+                    lastprime=list.get(v-1);
+                }
+                else if(list.get(v) <=A[i]){
+                    lastprime=list.get(v);
+                    v++;
+                }else{
+                    lastprime=list.get(v);
+                }
+                // lastprime=prime(A[i]);
+
+            }
+
+            if(primeMap.containsKey(lastprime)){
+                primeMap.put(lastprime,primeMap.get(lastprime)+1);
+            }else{
+                primeMap.put(lastprime,1);
+            }
+
+        }
+
+        System.out.println(primeMap);
+        for (Map.Entry<Integer,Integer> entry:primeMap.entrySet()) {
+            int val = power(2, entry.getValue(),MOD) - 1;
+            ans=ans+val;
+        }
+        System.out.println(ans);
+    }
+
+
+
+    public static int prime(int A){
+        for (int i = A; i >1 ; i--) {
+            if(b[i]){
+                return i;
+            }
+        }
+        return 0;
+    }
+
     public static void pre(int[] A){
         int MOD =1000000007;
         Arrays.sort(A);
+        for (int i = 0; i < A.length; i++) {
+            System.out.print(A[i]+" ");
+        }
+        System.out.println();
         int max = A[A.length-1];
         long ans=0;
         ArrayList<Integer> list = seive_prime(max);//2 3 5 7
@@ -31,26 +91,21 @@ public class Factorial_Prime {
         int[] pa = new int[A.length+2];
         int j=0;
         int count=1;
-        pa[2]=1;
-        for (int i = 3; i < pa.length; i++) {
-            if(pa[i-1] == A[i-3]){
-                pa[i]=pa[i-1];
+        for (int i = 2; i < pa.length; i++) {
+
+            if(j>=list.size()){
+                pa[i]=j;
             }else{
-                pa[i]=pa[i-1]+1;
+                if(A[i-2] == list.get(j) && A[i-1] ==A[i-2]){
+                    pa[i]=j;
+                    j++;
+                }else if(list.get(j)<=A[i-2] ){
+                    pa[i]=j+1;
+                    j++;
+                }else{
+                    pa[i]=j;
+                }
             }
-
-
-
-//            if(j>=list.size()){
-//                pa[i]=j;
-//            }else{
-//                if(A[i-2] == list.get(j)){
-//                    pa[i]=j+1;
-//                    j++;
-//                }else{
-//                    pa[i]=j;
-//                }
-//            }
 
         }
         for (int i = 0; i < pa.length; i++) {
@@ -235,10 +290,10 @@ public class Factorial_Prime {
     }
 
 
-
+    static Boolean[] b;
     public static ArrayList<Integer> seive_prime(int A){
+        b = new Boolean[A+1];
 
-        Boolean[] b = new Boolean[A+1];
         for (int i = 0; i < b.length; i++) {
             b[i]=true;
         }
