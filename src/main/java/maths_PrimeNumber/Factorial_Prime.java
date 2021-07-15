@@ -8,9 +8,9 @@ import java.util.Map;
 public class Factorial_Prime {
 
     public static void main(String[] args) {
-        int[] A={2,2,2,2,2};
+        int[] A={2,3,4,5,6};
                 //{125, 798, 631, 637, 572, 348, 234, 945, 504, 457, 255, 790, 586, 758, 173, 192, 706, 503, 419, 893, 140, 561, 492, 647, 979, 321, 751, 336, 23, 299, 65, 500, 449, 697, 137, 22, 397, 723, 967, 253, 533, 222, 396, 119, 980, 569, 311, 38, 424, 731, 932, 565, 644, 424, 564, 623, 745, 315, 311, 120, 615, 377, 621, 416, 426, 110, 438, 823, 834, 405, 429, 367, 979, 825, 486, 959, 746, 149, 350, 171, 232, 282, 88, 876, 706, 4, 852, 804, 671, 163, 924, 286, 892, 897, 55, 318, 8, 493, 494, 194 };
-        fact_array(A);
+        solve(A);
     }
 
     public static int power(int a, int b,int MOD){
@@ -20,6 +20,84 @@ public class Factorial_Prime {
         if((b%2)==1) res=((long)res*a)%MOD;
         return (int)res%MOD;
     }
+
+
+
+
+
+
+    public static int[] seive(int A,int max){
+
+
+        return null;
+    }
+
+
+
+    
+    public static void solve(int[] A){
+        int MOD =1000000007;
+        Arrays.sort(A); //sort
+        int max = A[A.length-1];
+        int[] seive = new int[max+1];
+        Arrays.fill(seive,1);
+
+        seive[0]=0;seive[1]=0;
+        for (int i = 2; i <=max ; i++) {
+            if(seive[i]==1){
+                for (int j = i; i*j<=max ; j++) {
+                    seive[i*j]=0;
+                }
+            }
+        }
+        for (int i = 0; i < seive.length; i++) {
+            System.out.print(seive[i]+" ");
+        }
+
+        //prefix
+        for (int i = 2; i <=max ; i++) {
+            seive[i]=seive[i-1]+seive[i];
+        }
+        System.out.println();
+        for (int i = 0; i < seive.length; i++) {
+            System.out.print(seive[i]+" ");
+        }
+
+        System.out.println();
+        HashMap<Integer,Integer> map = new HashMap<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 0; i < A.length; i++) {
+            if (A[i]<2) continue;
+            map.put(seive[A[i]],map.getOrDefault(seive[A[i]],0)+1); // Map seive[A[i]]
+            System.out.println(map);
+            if(map.get(seive[A[i]])==1){
+                list.add(seive[A[i]]);
+                System.out.println(list);
+            }
+        }
+
+        int count =0;
+        for (int i = 0; i < list.size(); i++) {
+            count += power(2,map.get(list.get(i)),MOD)-1;
+        }
+        System.out.println(count);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public static void fact_array(int[] A){
@@ -172,7 +250,7 @@ public class Factorial_Prime {
             }
         }
         System.out.println(map1);
-        
+
 //        for (int i = 0; i < A.length; i++) {
 //            if(A[i]<2){
 //                continue;
@@ -207,7 +285,7 @@ public class Factorial_Prime {
         }
         System.out.println(map);
 
-        
+
 
         for (int i = 0; i < A.length; i++) {
 
