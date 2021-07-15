@@ -7,18 +7,28 @@ public class Largest_Co_prime {
 
     public static void main(String[] args) {
 
-        int a =gcd(2,12);
+        int a =gcd(5,12);
         System.out.println(a);
-        ArrayList<Integer> list = divisors(30);
-        System.out.println(list);
-        int max =list.get(0);
-        for (int i = 0; i < list.size(); i++) {
-            if(gcd(list.get(i),12)==1){
-                max= Math.max(max,list.get(i));
-            }
-        }
-        System.out.println(max);
+//        ArrayList<Integer> list = divisors(30);
+//        System.out.println(list);
+//        int max =list.get(0);
+//        for (int i = 0; i < list.size(); i++) {
+//            if(gcd(list.get(i),12)==1){
+//                max= Math.max(max,list.get(i));
+//            }
+//        }
+        int c = solve(30,12);
+        System.out.println(c);
 
+    }
+
+    public static int solve(int a, int b){
+
+        if(a==1)return a;
+        while (gcd(a,b)!=1){
+            a=a/gcd(a,b);
+        }
+        return a;
     }
 
 
