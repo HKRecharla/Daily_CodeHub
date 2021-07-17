@@ -2,12 +2,13 @@ package maths_PrimeNumber;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class PrimeFactor {
 
     public static void main(String[] args) {
         int[] B ={11};
-        solve(B);
     }
 
 
