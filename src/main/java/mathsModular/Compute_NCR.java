@@ -3,9 +3,9 @@ package mathsModular;
 public class Compute_NCR {
     public static void main(String[] args) {
 
-        int A=6; //n
+        int A=3; //n
         int B=2; //r
-        int C=13; //p
+        int C=33; //p
 
 
         int n = (int)fact(A,C);

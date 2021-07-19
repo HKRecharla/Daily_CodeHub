@@ -1,6 +1,33 @@
 package mathsModular;
 
 public class Ncr_Scaler_code {
+
+    public static void main(String[] args) {
+        int A=41;
+        int B=27;
+        int C=143;
+
+        int[][] c =  new int[A+1][B+1];
+
+        for (int i = 0; i <=A; i++) {
+            int min = Math.min(i,B);
+            for (int j = 0; j <=min; j++) {
+                if(j==0 || j==i){
+                    c[i][j]=1;
+                }else{
+                    c[i][j]=c[i-1][j-1]+c[i-1][j];
+                }
+            }
+        }
+        System.out.println(c[A][B]%C);
+
+    }
+
+
+
+
+
+
     public int solve(int A, int B, int C) {
         if (A<B)
             return 0;
