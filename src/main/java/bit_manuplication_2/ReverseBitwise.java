@@ -3,7 +3,7 @@ package bit_manuplication_2;
 public class ReverseBitwise {
     public static void main(String[] args) {
 
-        long A=4294967293l;
+        long A=4294967295l;
         int[] res = decimal_to_binary(A);
 
         for (int i = 0; i <res.length ; i++) {
@@ -54,7 +54,9 @@ public class ReverseBitwise {
             if(A[i]==-1){
                 continue;
             }
-            num+= power(2,j)*A[i];
+            long pow = power(2,j);
+            num+= pow*A[i];
+            System.out.println(num+" "+A[i]+"="+(pow*A[i]));
             j++;
         }
         System.out.println(num);
