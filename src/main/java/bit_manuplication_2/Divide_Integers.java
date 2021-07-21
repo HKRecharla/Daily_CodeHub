@@ -6,7 +6,7 @@ public class Divide_Integers {
         long A=-1;
         long B=1;
         divide_pow(A,B);
-        System.out.println(9^17);
+        //System.out.println(9^17);
     }
 
     public static void divide(int A,int B){
@@ -21,10 +21,8 @@ public class Divide_Integers {
         if(a<0 && b>0 || b<0 && a>0){
             flag=true;
         }
-        if(flag || !fla){
             a=(long)Math.abs(a);
             b=(long)Math.abs(b);
-        }
         int ans=0;
         for (int i = 31; i >=0; i--) {
            long val = (a-(b*power(2,i)));
@@ -34,6 +32,10 @@ public class Divide_Integers {
            }
         }
 
+        if(flag){
+            return -1*ans;
+        }
+        if(ans>Integer.MAX_VALUE) return Integer.MAX_VALUE;
         System.out.println(ans);
         return ans;
     }

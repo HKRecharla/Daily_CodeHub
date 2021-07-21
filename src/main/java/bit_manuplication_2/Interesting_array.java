@@ -7,15 +7,15 @@ public class Interesting_array {
     }
 
     public static void sum(int[] A){
-        int r=0;
-        for (int i = 0; i < A.length-1; i++) {
-            r=r^A[i]^A[i+1];
+        int r=A[0];
+        for (int i = 1; i < A.length; i++) {
+            r=r^A[i];
         }
-        System.out.println(r);
-        int split = r/2;
-        System.out.println(split);
-        r = split^split;
-        System.out.println(r);
+        if(r%2==0){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
 
     }
 }
