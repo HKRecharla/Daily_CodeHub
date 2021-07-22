@@ -15,7 +15,7 @@ public class Find_PeakElement {
         int mid =A.length/2;
 
         if(A[mid]<A[mid+1]){
-            //peak()
+            peak(A,mid+1,A.length);
         }
 
 

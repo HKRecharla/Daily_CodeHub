@@ -11,8 +11,8 @@ public class Sum_binary {
 
     public static String solve(){
 
-        String a ="111";
-        String b ="111";
+        String a ="11";
+        String b ="1";
 
 
         int len1=  a.length();

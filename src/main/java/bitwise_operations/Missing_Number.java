@@ -5,19 +5,25 @@ import java.util.Arrays;
 public class Missing_Number {
 
     public static void main(String[] args) {
-
-        int[] A= {3, 4, -1, 1};
-        int ans = firstMissingPositive(A);
-        System.out.println(ans);
+        int n=00000000000000000000000000001011;
+        int[] A= {5,6,7,1,3,4};
+        missing(A);
+        System.out.println(A);
     }
 
 
     public static void missing(int[] A){
-        int ans =0;
-        for (int i = 0; i < A.length-1; i++) {
-            ans = ans^A[i]^A[i+1];
+        int ans =A[0];
+        int x2=0;
+        for (int i = 1; i < A.length; i++) {
+            ans = ans^A[i];
         }
-        System.out.println(ans^A.length);
+
+        for (int i = 2; i <=A.length+1; i++) {
+            x2=x2^i;
+        }
+
+        System.out.println(ans^x2);
     }
 
 
