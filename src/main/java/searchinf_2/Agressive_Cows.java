@@ -30,11 +30,11 @@ public class Agressive_Cows {
         System.out.println(ans);
     }
 
-    public static boolean check(int[] A, int cows,int distance){
+    public static boolean check(int[] A, int cows,int mid){
         int dis =0;
         cows--;
         for (int i = 1; i <A.length && cows>0 ; i++) {
-            if(dis+(A[i]-A[i-1])>=distance){
+            if(dis+(A[i]-A[i-1])>=mid){
                 cows--;
                 dis=0;
             }else{
