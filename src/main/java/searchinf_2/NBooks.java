@@ -6,9 +6,59 @@ public class NBooks {
 
         int [] A={73, 58, 30, 72, 44, 78, 23, 9};
         int B=5;
-        int[] pa= prefix(A);
-        bookd(pa);
+        int a = book(A,B);
+        System.out.println(a);
     }
+
+
+
+    public static boolean isconfig(int[] A, int B, int mid){
+
+        int i=0;
+        int sum=0;
+        int count=1;
+        while (i<A.length && count<=B){
+            sum+=A[i];
+            if(sum<=mid){
+                i++;
+            }else{
+                sum=0;
+                count++;
+            }
+        }
+        if (count<=B) return true;
+
+        return false;
+    }
+
+    public static int book(int[] A, int B){
+        int ans=0;
+        int len = A.length;
+        if (len<B) return  -1;
+        if(len==1) return A[0];
+
+
+        int min=A[0];
+        int sum=0;
+
+        for (int i = 0; i < len; i++) {
+            sum+=A[i];
+        }
+        if(B==1) return sum;
+        int max =sum;
+        int mid=0;
+        while (min<max){
+            mid = (max+min)/2;
+            if(isconfig(A,B,mid) ==true){
+                ans=mid;
+                max=mid;
+            }else{
+                min= mid+1;
+            }
+        }
+        return ans;
+    }
+
 
 
     public static int[] prefix(int[] A){
