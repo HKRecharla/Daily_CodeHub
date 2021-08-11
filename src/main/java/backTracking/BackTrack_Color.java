@@ -7,7 +7,7 @@ import java.util.Set;
 public class BackTrack_Color {
 
     public static void main(String[] args) {
-        permutation("ABCD");
+        permutation("ABC");
     }
 
     public static void permutation(String A){
