@@ -7,7 +7,11 @@ import java.util.Set;
 public class BackTrack_Color {
 
     public static void main(String[] args) {
-        permutation("ABC");
+
+        String s = "hari";
+        s="krishna";
+        System.out.println(s);
+       // permutation("ABC");
     }
 
     public static void permutation(String A){
@@ -27,6 +31,8 @@ public class BackTrack_Color {
         }
 
     }
+
+
 
 
     public static void recursion(String s, int n, String A,int[] arr,Set<String> set){
