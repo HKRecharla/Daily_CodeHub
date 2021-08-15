@@ -34,7 +34,7 @@ public class MaxFrequency {
             map.put(x,1);
         }
 
-        max_map.put()
+
 
         if(max<map.get(x)) max= map.get(x);
         ans.add(-1);

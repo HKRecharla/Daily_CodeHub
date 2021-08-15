@@ -10,7 +10,7 @@ public class Execution {
         stack.getMin();
         stack.pop();
         stack.getMin();
-        stack.peek();
+        //stack.peek();
 
 
 
