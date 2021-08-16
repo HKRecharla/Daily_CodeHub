@@ -8,7 +8,7 @@ public class Sixlets {
     static int ans=0;
     public static void main(String[] args) {
 
-        int[] A={5, 17, 1000, 11 };
+        int[] A={1,2,8 };
         int B=4;
 
         ArrayList<Integer> num = new ArrayList<>();
@@ -17,8 +17,9 @@ public class Sixlets {
         }
 
         ans=0;
-        getSub(num,0,0,B);
-        System.out.println(ans);
+        //getSub(num,0,0,B);
+        //System.out.println(ans);
+        allsub(num);
     }
 
     public static void allsub(ArrayList<Integer> num){
