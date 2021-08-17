@@ -2,30 +2,38 @@ package recursion;
 
 public class ReverseString {
 
+    static String res="";
     public static void main(String[] args) {
 
 
-        String A= "madam";
-        int str = solve(A);
-        System.out.println(str);
+        String A= "qxkpvo  f   w vdg t wqxy ln mbqmtwwbaegx   mskgtlenfnipsl bddjk znhksoewu zwh bd fqecoskmo";
+                //"fwbpudnbrozzifml osdt ulc jsx kxorifrhubk ouhsuhf sswz qfho dqmy sn myq igjgip iwfcqq";
+
+        String s[] = A.trim().replaceAll("( )+"," ").split(" ");
+        String ans ="";
+        reverse(s,s.length-1);
+        //String str = reverse(A);
+        System.out.println(res.substring(1));
     }
 
     public static String reverse(String A){
-
         if(A==null || A.length()<=1){
             return A;
         }
-        String s = A.substring(1);
-        char c = A.charAt(0);
-
-        return reverse(s)+c;
-
-        /**
-         * String reverse="";
-         *         reverse += A.charAt(A.length() - 1) + reverse(A.substring(0, A.length() - 1));
-         *         return reverse;
-         */
+        return reverse(A.substring(1))+A.charAt(0);
     }
+
+    public static void reverse(String[] A,int position){
+        if(position>=0) {
+            res=res+" "+A[position];
+            reverse(A,position-1);
+        }
+
+    }
+
+
+
+
 
     public static int solve(String A){
         if(A.length()==0 || A.length() <=1){
