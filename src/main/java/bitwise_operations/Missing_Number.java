@@ -6,9 +6,9 @@ public class Missing_Number {
 
     public static void main(String[] args) {
         int n=00000000000000000000000000001011;
-        int[] A= {5,6,7,1,3,4};
-        missing(A);
-        System.out.println(A);
+        int[] A= {5,4,6,1,3,4};
+       duplicate(A);
+       // System.out.println(ans);
     }
 
 
@@ -19,7 +19,7 @@ public class Missing_Number {
             ans = ans^A[i];
         }
 
-        for (int i = 2; i <=A.length+1; i++) {
+        for (int i = 1; i <=A.length+1; i++) {
             x2=x2^i;
         }
 
@@ -28,8 +28,8 @@ public class Missing_Number {
 
 
     public static void duplicate(int[] A){
-        int ans =0;
-        for (int i = 0; i < A.length; i++) {
+        int ans =A[0];
+        for (int i = 1; i < A.length; i++) {
             ans = ans^A[i];
         }
         System.out.println(ans);

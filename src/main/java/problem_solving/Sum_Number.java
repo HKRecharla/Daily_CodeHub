@@ -7,7 +7,7 @@ public class Sum_Number {
 
         int N=100;
 
-       int n=  method1(N);
+       int n=  method4(N);
         System.out.println(n);
 
     }

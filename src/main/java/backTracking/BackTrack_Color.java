@@ -9,8 +9,8 @@ public class BackTrack_Color {
 
     public static void main(String[] args) {
 
-        subset(2);
-        //permutation("ABC");
+        //subset(2);
+        permutation("ABC");
     }
 
     public static void permutation(String A){

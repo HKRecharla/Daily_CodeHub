@@ -14,13 +14,15 @@ public class Minimum_swaps {
             int a = C[i][0];
             int b = C[i][1];
             int temp =B[0];
-            for (int j = 0; j <=b; j++) {
-                if(B[j]==a || B[j]==b){
+            int start_position=0;
+            int end_position=0;
+            for (int j = 0; j <=blen; j++) {
+                if(a!=B[j] && b==B[j]){
                     continue;
+                }else if(a!=B[j]){
+                    start_position=j;
                 }
-                if(B[j]==b){
 
-                }
             }
         }
 

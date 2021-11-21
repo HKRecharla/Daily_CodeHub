@@ -20,7 +20,7 @@ public class Element_appear_once {
 
         int arr[] = {12, 1, 12, 3, 12, 1, 1, 2, 3, 3};
         //1,1,1,2,3,3,3,12,12
-        appear2(arr);
+        appear(arr);
     }
 
 

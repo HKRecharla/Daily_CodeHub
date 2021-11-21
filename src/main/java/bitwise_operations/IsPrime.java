@@ -4,7 +4,7 @@ public class IsPrime {
 
 
     public static void main(String[] args) {
-        int A=720927070;
+        int A=35;
         int a = isPrime(A);
         System.out.println(a);
     }

@@ -1,8 +1,11 @@
 package strings_cla;
 
+import java.util.ArrayList;
+
 public class Closest_palindrom {
     public static void main(String[] args) {
 
+        int a=999999999;
         String A="a";
         close(A);
     }
@@ -51,6 +54,7 @@ public class Closest_palindrom {
     if(A.length()==1){
 
     }
+        ArrayList<Integer> lis = new ArrayList<>();
         while (l<r){
             if(A.charAt(l) == A.charAt(r)){
                 l++;
